@@ -43,4 +43,29 @@ input.onGesture(Gesture.Shake, function () {
 basic.forever(function () {
     basic.pause(1000)
     Loneliness += 1
+    if (Loneliness < 10) {
+        basic.showLeds(`
+            . # . # .
+            . # . # .
+            # . . . #
+            # . . . #
+            . # # # .
+            `)
+    } else if (Loneliness == 10) {
+        basic.showLeds(`
+            . # . # .
+            . # . # .
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+    } else if (Loneliness > 20) {
+        basic.showLeds(`
+            . # . # .
+            . # . # .
+            . . . . .
+            # # # # #
+            # . . . #
+            `)
+    }
 })
